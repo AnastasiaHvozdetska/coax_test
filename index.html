@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Screen Saver</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="screenSaver" class="screensaver">
+        <ul id="list" class="screensaver-list">
+            <li class="list-item 1">
+                <img src="images/1.jpeg" alt="">
+            </li>
+            <li class="list-item 2">
+                <img src="images/2.jpeg" alt="">
+            </li>
+            <li class="list-item 3">
+                <img src="images/3.jpeg" alt="">
+            </li>
+            <li class="list-item 4">
+                <img src="images/4.jpeg" alt="">
+            </li>
+            <li class="list-item 5">
+                <img src="images/5.jpeg" alt="">
+            </li>
+            <li class="list-item 6">
+                <img src="images/6.jpeg" alt="">
+            </li>
+            <li class="list-item 7">
+                <img src="images/7.jpeg" alt="">
+            </li>
+        </ul>
+    </div>
+    <script src="screensaver.js"></script>
+    <script>
+        var ScreenSaver = new ScreenSaver({
+            events: ['mousemove', 'keyup', 'DOMContentLoaded'], // listen user's events
+            timeToSleep: 10, // time delay  (sec)
+            interval: 5, // wait to chanhge image  (sec)
+            screenList: '#list li', // scrensaver elements
+            firstActiveElement: -1 // set first element (-1 because our list starts from 0)
+        }) 
+    </script>
+</body>
+</html>
