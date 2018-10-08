@@ -1,6 +1,3 @@
-
-
-// Remove screen saver.
 function ScreenSaver(args) {
 	// Declare const.
 	let interval = (args.interval * 1000) || 1000; // ms to sec.
@@ -15,7 +12,7 @@ function ScreenSaver(args) {
 	let screenList = document.querySelectorAll(args.screenList); // all images
 	let countItems = screenList.length; // count of 
 
-	// Start screen saver for every user's action.
+	// Bind each eventlistner for start/stop.
 	for (var i = 0, len = this.events.length; i < len; i++) {
 		document.addEventListener(this.events[i], function(){
 			stopScreenSaver()
@@ -23,13 +20,13 @@ function ScreenSaver(args) {
 		})
 	}
 
-	// Stop screen saver for every user's action.
+	// Stop screen saver.
 	function stopScreenSaver() {
 		document.getElementById('screenSaver').classList.remove('active');
 		clearTimeout(waitTimeout);
 		clearTimeout(changeInterval);
 	}
-
+	// Start screen saver.
   function startScreenSaver() {
 		clearTimeout(this.timeout);
     this.timeout = setTimeout(function() {
